@@ -1,0 +1,51 @@
+﻿@page "/"
+@using TodoWebsite.Data
+@using TodoWebsite.Services
+@inject TodoDatabaseContex Db
+
+
+<h1>Hello, world!</h1>
+
+
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Tytuł</h5>
+      <small>Data</small>
+    </div>
+    <p class="mb-1">Opis</p>
+    <small>Tagi</small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small class="text-muted">And some muted small print.</small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small class="text-muted">And some muted small print.</small>
+  </a>
+</div>
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+@code{
+
+    private List<TodoList> List { get; set; } = new List<TodoList>();
+
+    protected override void OnInitialized() {
+        using (var dbContext = Db)
+             {
+                 //Ensure database is created
+                 dbContext.Database.EnsureCreated();
+             }
+        base.OnInitialized();
+    }
+   
+}
