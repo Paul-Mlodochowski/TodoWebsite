@@ -86,3 +86,4 @@ C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\obj\Debug\net5.0\scop
 C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\obj\Debug\net5.0\RazorDeclaration\Pages\Components\Popout.razor.g.cs
 C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\obj\Debug\net5.0\Razor\Pages\Components\Popout.razor.g.cs
 C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\obj\Debug\net5.0\scopedcss\Pages\Components\Popout.razor.rz.scp.css
+C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.dll

@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[5.0.16, )"
             },
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.15, )"
+            },
             "bootstrap": {
               "target": "Package",
               "version": "[5.1.3, )"

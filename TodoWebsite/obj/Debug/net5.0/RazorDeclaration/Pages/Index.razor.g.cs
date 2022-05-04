@@ -180,6 +180,63 @@ using TodoWebsite.Data;
     }
     private void ToggleFilter() { 
         IsDisabled = !IsDisabled;
+        if (IsDisabled)
+            ShowResults();
+    }
+
+    private bool FiltringOfDone { get; set; } = false;
+    private string FiltringOfDate { get; set; }
+
+    private void CheckWhichFiltringResultsUserIsUsing() {
+        var filtringMethods = new List<Action>();
+        List<TodoList> TodoItems = new List<TodoList>();
+        using(var dbContex = new TodoDatabaseContex()){
+            TodoItems = dbContex.TodoLists.ToList<TodoList>();
+             foreach (var item in dbContex.TodoLists)
+                {
+                    dbContex.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // To dodaje tagi do items
+                    
+                }
+            filtringMethods.Add(() =>
+            {
+                var query = from item in TodoItems
+                            where item.IsDone == FiltringOfDone
+                            select item;
+
+                if(query is not null)
+                    TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
+
+            });
+            if(FiltringOfDate is not null && FiltringOfDate != "")
+                filtringMethods.Add(() =>
+                {
+                    DateTime userDate = new DateTime();
+                    try {
+                        userDate = DateTime.Parse(FiltringOfDate);
+                    }catch(ArgumentException) {
+                        FiltringOfDate = "Fill in proprate formated date!";
+                        return;
+                    }
+                    catch(FormatException) {
+                        FiltringOfDate = "Fill in proprate formated date!";
+                        return;
+                    }
+                    var query = from item in TodoItems
+                                where DateTime.Compare(item.Date,userDate) >= 0
+                                select item;
+
+                    if(query is not null)
+                        TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
+
+                });
+
+        };
+        foreach (var action in filtringMethods)
+        {
+            action.Invoke();
+        }
+        List = TodoItems;
+
     }
 
    
