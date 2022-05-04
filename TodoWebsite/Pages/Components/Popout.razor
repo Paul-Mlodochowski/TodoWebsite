@@ -1,0 +1,113 @@
+﻿
+@inject TodoDatabaseContex Db
+
+
+<div class="modal @ModalClass " tabindex="-1" role="dialog" style="display:@ModalDisplay">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add new task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body d-flex flex-column text-center ">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Add Title*</span>
+                  <input type="text" class="form-control @BorderColorsChange["title"]" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1" @bind="TitleText">
+                </div>
+
+                 <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Add Description*</span>
+                  <input type="text" class="form-control @BorderColorsChange["description"]" placeholder="Description" aria-label="Username" aria-describedby="basic-addon1" @bind="DescriptionText">
+                </div>
+                 <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Add Tags*</span>
+                  <input type="text" class="form-control  @BorderColorsChange["tags"]" placeholder="Tags seperate by space" aria-label="Username" aria-describedby="basic-addon1" @bind="TagsText">
+                </div>
+                @if (ShowDanger) {
+                    <p class="text-danger">All values must be specified*</p>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" @onclick="AddToDb">Add</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => Close()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@if (ShowBackdrop) {
+    <div class="modal-backdrop fade show"></div>
+}
+
+@code {
+
+
+    public string ModalDisplay = "none;";
+    public string ModalClass = "";
+    public bool ShowBackdrop = false;
+
+    private string TitleText { get; set; }
+    private string DescriptionText { get; set; }
+    private string TagsText { get; set; }
+    private bool ShowDanger = false;
+
+    private Dictionary<string, object> BorderColorsChange = new Dictionary<string, object>()
+    {
+        {"title","border-primary" },
+        {"description","border-primary" },
+        {"tags","border-primary" }
+    };
+
+
+    public void Open()
+    {
+        ModalDisplay = "block;";
+        ModalClass = "Show";
+        ShowBackdrop = true;
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        ModalDisplay = "none";
+        ModalClass = "";
+        ShowBackdrop = false;
+        StateHasChanged();
+    }
+    private void AddToDb() {
+
+        if (checkIfValid()) {
+            using(var dbcontex = Db){
+                
+            }
+        }
+
+
+    }
+    private bool checkIfValid() {
+        bool shouldAddToDb = true;
+        if (TitleText is null || TitleText == "") {
+            BorderColorsChange["title"] = "border-danger";
+            ShowDanger = true;
+            shouldAddToDb = false;
+        }
+        else
+            BorderColorsChange["title"] = "border-primary";
+        if (DescriptionText is null || DescriptionText == "") {
+            BorderColorsChange["description"] = "border-danger";
+            ShowDanger = true;
+            shouldAddToDb = false;
+        }
+        else
+            BorderColorsChange["description"] = "border-primary";
+        if (TagsText is null || TagsText == "") {
+            BorderColorsChange["tags"] = "border-danger";
+            ShowDanger = true;
+            shouldAddToDb = false;
+        }
+        else
+            BorderColorsChange["tags"] = "border-primary";
+        return shouldAddToDb;
+    }
+}

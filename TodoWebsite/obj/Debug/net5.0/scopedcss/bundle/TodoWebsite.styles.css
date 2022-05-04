@@ -1,3 +1,19 @@
+/* _content/TodoWebsite/Pages/Components/Popout.razor.rz.scp.css */
+.input-group span[b-lrkz2gg4n6]{
+    color:rgb(126, 126, 126);
+}
+
+.input-group input[b-lrkz2gg4n6]::placeholder {
+    font-size: 0.8rem;
+    color: rgba(79, 79, 79, 0,80);
+}
+/* _content/TodoWebsite/Pages/Index.razor.rz.scp.css */
+.w-55[b-b8rcudewzl] {
+    width: 55%;
+}
+.tags-color[b-b8rcudewzl]{
+    color:rgb(155, 155, 155);
+}
 /* _content/TodoWebsite/Shared/MainLayout.razor.rz.scp.css */
 .page[b-0w5zs2cqf7] {
     position: relative;

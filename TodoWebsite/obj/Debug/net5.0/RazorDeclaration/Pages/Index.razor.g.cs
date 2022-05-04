@@ -83,15 +83,15 @@ using TodoWebsite.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
-using TodoWebsite.Data;
+#line 11 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\_Imports.razor"
+using TodoWebsite.Services;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
-using TodoWebsite.Services;
+#line 2 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
+using TodoWebsite.Data;
 
 #line default
 #line hidden
@@ -105,19 +105,55 @@ using TodoWebsite.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
+#line 60 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
       
 
+    private TodoWebsite.Pages.Components.Popout Modal { get; set; }
     private List<TodoList> List { get; set; } = new List<TodoList>();
+    private List<Tag> ListOfTags { get; set; } = new List<Tag>();
 
     protected override void OnInitialized() {
         using (var dbContext = Db)
-             {
-                 //Ensure database is created
-                 dbContext.Database.EnsureCreated();
-             }
+        {
+            //Ensure database is created
+            dbContext.Database.EnsureCreated();
+
+            if (!dbContext.TodoLists.Any())
+            {
+
+                var itemTodo = new TodoList()
+                    {
+                        Title = "Majkówka",
+                        Description = "Fajna majóweczka",
+                        IsDone = false,
+                        Date = DateTime.Now
+
+                    };
+                Tag tag = new Tag() { TagValue = "Maj"};
+                Tag tag2 = new Tag() { TagValue = "Raz"};
+                itemTodo.Tags = new List<Tag>() { tag, tag2 };
+                dbContext.TodoLists.Add(itemTodo);
+                dbContext.Tags.Add(tag);
+                dbContext.Tags.Add(tag2);
+                dbContext.SaveChanges();
+            }
+
+            foreach (var item in dbContext.TodoLists)
+            {
+                dbContext.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // To dodaje tagi do items
+                List.Add(item);
+            }
+
+
+        }
         base.OnInitialized();
     }
+    private void AddNewTodoTask() {
+        using(var dbContex = Db){
+            
+        }
+    }
+
    
 
 #line default

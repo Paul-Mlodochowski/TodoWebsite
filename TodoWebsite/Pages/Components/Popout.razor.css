@@ -1,0 +1,8 @@
+﻿.input-group span{
+    color:rgb(126, 126, 126);
+}
+
+.input-group input::placeholder {
+    font-size: 0.8rem;
+    color: rgba(79, 79, 79, 0,80);
+}

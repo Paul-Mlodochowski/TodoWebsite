@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace TodoWebsite
+namespace TodoWebsite.Pages.Components
 {
     #line hidden
     using System;
@@ -89,13 +89,90 @@ using TodoWebsite.Services;
 #line default
 #line hidden
 #nullable disable
-    public partial class App : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Popout : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 43 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\Popout.razor"
+       
+
+
+    public string ModalDisplay = "none;";
+    public string ModalClass = "";
+    public bool ShowBackdrop = false;
+
+    private string TitleText { get; set; }
+    private string DescriptionText { get; set; }
+    private string TagsText { get; set; }
+    private bool ShowDanger = false;
+
+    private Dictionary<string, object> BorderColorsChange = new Dictionary<string, object>()
+    {
+        {"title","border-primary" },
+        {"description","border-primary" },
+        {"tags","border-primary" }
+    };
+
+
+    public void Open()
+    {
+        ModalDisplay = "block;";
+        ModalClass = "Show";
+        ShowBackdrop = true;
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        ModalDisplay = "none";
+        ModalClass = "";
+        ShowBackdrop = false;
+        StateHasChanged();
+    }
+    private void AddToDb() {
+
+        if (checkIfValid()) {
+            using(var dbcontex = Db){
+                
+            }
+        }
+
+
+    }
+    private bool checkIfValid() {
+        bool shouldAddToDb = true;
+        if (TitleText is null || TitleText == "") {
+            BorderColorsChange["title"] = "border-danger";
+            ShowDanger = true;
+            shouldAddToDb = false;
+        }
+        else
+            BorderColorsChange["title"] = "border-primary";
+        if (DescriptionText is null || DescriptionText == "") {
+            BorderColorsChange["description"] = "border-danger";
+            ShowDanger = true;
+            shouldAddToDb = false;
+        }
+        else
+            BorderColorsChange["description"] = "border-primary";
+        if (TagsText is null || TagsText == "") {
+            BorderColorsChange["tags"] = "border-danger";
+            ShowDanger = true;
+            shouldAddToDb = false;
+        }
+        else
+            BorderColorsChange["tags"] = "border-primary";
+        return shouldAddToDb;
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private TodoDatabaseContex Db { get; set; }
     }
 }
 #pragma warning restore 1591
