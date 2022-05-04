@@ -90,7 +90,7 @@ using TodoWebsite.Services;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
+#line 12 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\_Imports.razor"
 using TodoWebsite.Data;
 
 #line default
@@ -105,7 +105,7 @@ using TodoWebsite.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 60 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
+#line 59 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
       
 
     private TodoWebsite.Pages.Components.Popout Modal { get; set; }
@@ -115,28 +115,8 @@ using TodoWebsite.Data;
     protected override void OnInitialized() {
         using (var dbContext = Db)
         {
-            //Ensure database is created
+
             dbContext.Database.EnsureCreated();
-
-            if (!dbContext.TodoLists.Any())
-            {
-
-                var itemTodo = new TodoList()
-                    {
-                        Title = "Majkówka",
-                        Description = "Fajna majóweczka",
-                        IsDone = false,
-                        Date = DateTime.Now
-
-                    };
-                Tag tag = new Tag() { TagValue = "Maj"};
-                Tag tag2 = new Tag() { TagValue = "Raz"};
-                itemTodo.Tags = new List<Tag>() { tag, tag2 };
-                dbContext.TodoLists.Add(itemTodo);
-                dbContext.Tags.Add(tag);
-                dbContext.Tags.Add(tag2);
-                dbContext.SaveChanges();
-            }
 
             foreach (var item in dbContext.TodoLists)
             {
@@ -144,13 +124,37 @@ using TodoWebsite.Data;
                 List.Add(item);
             }
 
-
         }
+
         base.OnInitialized();
     }
-    private void AddNewTodoTask() {
-        using(var dbContex = Db){
-            
+    private void ShowResults() {
+        List.Clear();
+        using(var dbContex = new TodoDatabaseContex()){
+            foreach (var item in dbContex.TodoLists)
+            {
+                dbContex.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // To dodaje tagi do items
+                List.Add(item);
+            }
+        }
+    }
+    private void AddNewTodoTask(TodoList list) {
+        using(var dbContex = new TodoDatabaseContex()){
+            dbContex.TodoLists.Add(list);
+            dbContex.AddRange(list.Tags);
+            dbContex.SaveChanges();
+            ShowResults();
+        }
+    }
+    private void Delete(int id) {
+        using(var dbContex = new TodoDatabaseContex()){
+
+            var itemToDelete = dbContex.TodoLists.Where(item => item.Id == id).FirstOrDefault<TodoList>();
+            var tagsToDelete = dbContex.Tags.Where(item => item.TodoListId == itemToDelete.Id);
+            dbContex.TodoLists.Remove(itemToDelete);
+            dbContex.RemoveRange(tagsToDelete);
+            dbContex.SaveChanges();
+            ShowResults();
         }
     }
 

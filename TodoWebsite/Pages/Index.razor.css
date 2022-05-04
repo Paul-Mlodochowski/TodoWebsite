@@ -4,3 +4,6 @@
 .tags-color{
     color:rgb(155, 155, 155);
 }
+.pe-auto:hover{
+    cursor:pointer;
+}

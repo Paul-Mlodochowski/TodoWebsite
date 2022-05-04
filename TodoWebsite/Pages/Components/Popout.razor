@@ -30,7 +30,7 @@
                 }
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" @onclick="AddToDb">Add</button>
+                <button type="button" class="btn btn-primary" @onclick="()=>{FormatToDb(); Close();}">Add</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => Close()">Close</button>
             </div>
         </div>
@@ -41,6 +41,8 @@
 }
 
 @code {
+    [Parameter]
+    public EventCallback<TodoList> AddToDb { get; set; }
 
 
     public string ModalDisplay = "none;";
@@ -75,12 +77,22 @@
         ShowBackdrop = false;
         StateHasChanged();
     }
-    private void AddToDb() {
+    private void FormatToDb() {
 
         if (checkIfValid()) {
-            using(var dbcontex = Db){
-                
-            }
+            
+
+                TodoList newTodoItem = new TodoList()
+                    {
+                        Title = TitleText,
+                        Description = DescriptionText,
+                        IsDone = false,
+                        Date = DateTime.Now
+                    };
+                var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
+                newTodoItem.Tags = listOfTags;
+                AddToDb.InvokeAsync(newTodoItem);
+            
         }
 
 
