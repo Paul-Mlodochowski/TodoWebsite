@@ -8,59 +8,156 @@
     <h1 class="mb-3">Todo List</h1>
     
     <div class="list-group w-55">
-    @foreach(var TodoItem in List){
-      <div  class="list-group-item list-group-item-action  mb-3" aria-current="true">
-        <div class="d-flex flex-row w-100 justify-content-between">
-          <h3 class="mb-3 fs-2 fw-bold">@TodoItem.Title</h3>
-          <div class="d-flex flex-row">
-              <small>@TodoItem.Date</small>
-              <a class="ml-3 pe-auto">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6610f2" class="bi bi-pencil" viewBox="0 0 16 16">
-                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-                  </svg>
-              </a>
-              <a class="ml-3 pe-auto" @onclick="()=>{Delete(TodoItem.Id);}">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#dc3545" class="bi bi-x-square" viewBox="0 0 16 16">
-                  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                </svg>
-              </a>
-          </div>
-        </div>
-        <p class="mb-1 w-75 text-break">@TodoItem.Description</p>
-       <div class="d-flex w-100 justify-content-between">
+            @foreach (var TodoItem in List) {
+                
+                
+                <div  class="list-group-item list-group-item-action  mb-3 @(TodoItem.IsDone ? "done":"")" aria-current="true">
+                    <div class="d-flex flex-row w-100 justify-content-between">
+                        <h3 class="mb-3 fs-2 fw-bold">@TodoItem.Title</h3>
+                        <div class="d-flex flex-row">
+                            <small>@TodoItem.Date</small>
+                            <a class="ml-3 pe-auto" @onclick="()=>Modal.Open(TodoItem)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6610f2" class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                                </svg>
+                            </a>
+                            <a class="ml-3 pe-auto" @onclick="()=>Delete(TodoItem.Id)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#dc3545" class="bi bi-x-square" viewBox="0 0 16 16">
+                                    <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="mb-1 w-75 text-break">@TodoItem.Description</p>
+                    <div class="d-flex w-100 justify-content-between">
 
-        <small class="tags-color">
-            @foreach(var tag in TodoItem.Tags){
-                    @tag.TagValue
+                        <small class="tags-color">
+                            @foreach (var tag in TodoItem.Tags) {
+                                @(tag.TagValue + " ")
+                                ;
+                            }
+                        </small>
+                        <div class="form-check">
+                            @if (TodoItem.IsDone) {
+                                <input class="form-check-input" type="checkbox" checked value="" id="flexCheckDefault" @onchange="eventArgs =>ChangeStatus(TodoItem,eventArgs.Value)">
+                            }
+                            else{
+                                <input class="form-check-input" type="checkbox"  value="" id="flexCheckDefault" @onchange="eventArgs =>ChangeStatus(TodoItem,eventArgs.Value)">
+                            }
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Is Done
+                            </label>
+                        </div>
+                    </div>
+                </div>
             }
-         </small>
-         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-            Is Done
-            </label>
-         </div>
-       </div>
-      </div>
-    }
-    <button type="button" class="btn btn-primary w-25 align-self-xl-end mb-4" data-bs-toggle="button" autocomplete="off" @onclick="()=>Modal.Open()" >Add new Task</button>
+            <button type="button" class="btn btn-primary w-25 align-self-xl-end mb-4" data-bs-toggle="button" autocomplete="off" @onclick="()=>Modal.Open()" >Add new Task</button>
 
-    </div>
-   </section>
-    <section>
-        Filtrowanie
+        </div>
     </section>
+    <section class="d-flex flex-column align-content-center align-items-center w-45">
+        <div class="form-check text-center">
+            <input class="form-check-input" type="checkbox" value="" id="filterToggle" @onchange="ToggleFilter">
+            <label class="form-check-label filterLable" for="filterToggle">
+                Turn On filtring
+            </label>
+        </div>
+        @if (IsDisabled) {
+            <div class="w-65 mt-4 d-flex flex-row justify-content-between border border-dark rounded p-5 flex-wrap">
+                <div class="form-check w-25">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                    <label class="form-check-label" for="defaultCheck2">
+                        IsDone?<svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" fill="rgb(57, 191, 37)" class="bi bi-check-all" viewBox="0 0 16 16">
+                            <path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z"/>
+                        </svg>
+                    </label>
+                </div>
+                <div class="input-group mb-3 w-65">
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16">
+                            <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z"/>
+                            <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z"/>
+                        </svg>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Filter by tags (seperate by space)" disabled>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Search by title or description" disabled>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                            <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                        </svg>
+                    </span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Search by Date dd-mm-yyyy" disabled>
+                    <div class="input-group mb-0 mt-3 d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary w-50 "disabled>Filter</button>
+                    </div>
+                </div>
+            </div>
+        }
+        else {
+            <div class="w-65 mt-4 d-flex flex-row justify-content-between border border-dark rounded p-5 flex-wrap">
+                <div class="form-check w-25">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        IsDone?<svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" fill="rgb(57, 191, 37)" class="bi bi-check-all" viewBox="0 0 16 16">
+                            <path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z"/>
+                        </svg>
+                    </label>
+                </div>
+                <div class="input-group mb-3 w-65">
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16">
+                            <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z"/>
+                            <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z"/>
+                        </svg>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Filter by tags (seperate by space)">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Search by title or description">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                            <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                        </svg>
+                    </span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Search by Date dd-mm-yyyy" >
+                    <div class="input-group mb-0 mt-3 d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary w-50 ">Filter</button>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </section>
+   
 </main>
 
-<TodoWebsite.Pages.Components.Popout @ref="Modal" AddToDb="AddNewTodoTask"></TodoWebsite.Pages.Components.Popout>
-
+<TodoWebsite.Pages.Components.Popout @ref="Modal" AddToDb="AddNewTodoTask" UpdateToDb="Update"></TodoWebsite.Pages.Components.Popout>
 
 @code{
 
     private TodoWebsite.Pages.Components.Popout Modal { get; set; }
     private List<TodoList> List { get; set; } = new List<TodoList>();
     private List<Tag> ListOfTags { get; set; } = new List<Tag>();
+    private bool IsDisabled { get; set; } = true;
 
     protected override void OnInitialized() {
         using (var dbContext = Db)
@@ -93,8 +190,19 @@
             dbContex.TodoLists.Add(list);
             dbContex.AddRange(list.Tags);
             dbContex.SaveChanges();
-            ShowResults();
         }
+        ShowResults();
+    }
+    private void Update(TodoList list) {
+        using(var dbContex = new TodoDatabaseContex()){
+            var newTags = list.Tags;
+            var tagsToDelete = dbContex.Tags.Where(item => item.TodoListId == list.Id);
+            dbContex.Tags.RemoveRange(tagsToDelete);
+            dbContex.Tags.AddRange(newTags);
+            dbContex.TodoLists.Update(list);
+            dbContex.SaveChanges();
+        }
+        ShowResults();
     }
     private void Delete(int id) {
         using(var dbContex = new TodoDatabaseContex()){
@@ -102,10 +210,22 @@
             var itemToDelete = dbContex.TodoLists.Where(item => item.Id == id).FirstOrDefault<TodoList>();
             var tagsToDelete = dbContex.Tags.Where(item => item.TodoListId == itemToDelete.Id);
             dbContex.TodoLists.Remove(itemToDelete);
-            dbContex.RemoveRange(tagsToDelete);
+            dbContex.Tags.RemoveRange(tagsToDelete);
             dbContex.SaveChanges();
-            ShowResults();
         }
+        ShowResults();
+    }
+    private void ChangeStatus(TodoList todoItem, object obj) {
+        var newValue = (bool)obj;
+        using(var dbContex = new TodoDatabaseContex()){
+            todoItem.IsDone = newValue;
+            dbContex.TodoLists.Update(todoItem);
+            dbContex.SaveChanges();
+        }
+        ShowResults();
+    }
+    private void ToggleFilter() { 
+        IsDisabled = !IsDisabled;
     }
 
    

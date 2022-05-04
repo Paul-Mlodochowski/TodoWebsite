@@ -1,9 +1,37 @@
 ﻿.w-55 {
     width: 55%;
 }
-.tags-color{
-    color:rgb(155, 155, 155);
+.w-45 {
+    width: 45%;
+}
+.w-65{
+    width:65%;
+}
+.tags-color {
+    color: rgb(155, 155, 155);
 }
 .pe-auto:hover{
     cursor:pointer;
+}
+#filterToggle{
+    transform:scale(1.5);
+
+}
+.filterLable {
+    color:black;
+   
+}
+.done {
+    background-color: #51ca593d;
+    border: 1px solid rgb(57, 191, 37);
+}
+#TagsFilterBox {
+    padding-left: 2rem;
+}
+.input-group input::placeholder {
+    font-size: 0.7rem;
+    color: rgba(79, 79, 79, 0,80);
+}
+#defaultCheck2{
+    font-size:0.7rem;
 }

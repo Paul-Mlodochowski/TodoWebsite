@@ -104,11 +104,16 @@ using TodoWebsite.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\Popout.razor"
+#line 64 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\Popout.razor"
        
     [Parameter]
     public EventCallback<TodoList> AddToDb { get; set; }
+    [Parameter]
+    public EventCallback<TodoList> UpdateToDb { get; set; }
 
+    private TodoList todoItem;
+    private bool isUpdating = false;
+    private string updateString = "";
 
     public string ModalDisplay = "none;";
     public string ModalClass = "";
@@ -127,11 +132,25 @@ using TodoWebsite.Data;
     };
 
 
-    public void Open()
+    public void Open() // do dodawania
     {
         ModalDisplay = "block;";
         ModalClass = "Show";
         ShowBackdrop = true;
+        isUpdating = false;
+        StateHasChanged();
+    }
+    public void Open(TodoList todoItem) // do edytowania
+    {
+        ModalDisplay = "block;";
+        ModalClass = "Show";
+        ShowBackdrop = true;
+
+        this.todoItem = todoItem;
+        updateString = TagFormater.ReturnStringOfUnFormatedTags(todoItem.Tags);
+        isUpdating = true;
+
+
         StateHasChanged();
     }
 
@@ -140,26 +159,43 @@ using TodoWebsite.Data;
         ModalDisplay = "none";
         ModalClass = "";
         ShowBackdrop = false;
+        TitleText = null;
+        DescriptionText = null;
+        TagsText = null;
+        updateString = "";
+        ShowDanger = false;
         StateHasChanged();
     }
     private void FormatToDb() {
 
         if (checkIfValid()) {
-            
 
-                TodoList newTodoItem = new TodoList()
+
+            TodoList newTodoItem = new TodoList()
                     {
                         Title = TitleText,
                         Description = DescriptionText,
                         IsDone = false,
                         Date = DateTime.Now
                     };
-                var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
-                newTodoItem.Tags = listOfTags;
-                AddToDb.InvokeAsync(newTodoItem);
-            
+            var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
+            newTodoItem.Tags = listOfTags;
+            AddToDb.InvokeAsync(newTodoItem);
+
         }
 
+
+    }
+    private void FormatToDbUpdate() {
+        // Aby nie tworzyć kolejnej metody sprawdzającen
+        TitleText = todoItem.Title;
+        DescriptionText = todoItem.Description;
+        TagsText = updateString;
+        if (checkIfValid()) {
+                var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
+                todoItem.Tags = listOfTags;
+                UpdateToDb.InvokeAsync(this.todoItem);
+        }
 
     }
     private bool checkIfValid() {

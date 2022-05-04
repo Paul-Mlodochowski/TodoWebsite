@@ -13,11 +13,39 @@
 .w-55[b-b8rcudewzl] {
     width: 55%;
 }
-.tags-color[b-b8rcudewzl]{
-    color:rgb(155, 155, 155);
+.w-45[b-b8rcudewzl] {
+    width: 45%;
+}
+.w-65[b-b8rcudewzl]{
+    width:65%;
+}
+.tags-color[b-b8rcudewzl] {
+    color: rgb(155, 155, 155);
 }
 .pe-auto:hover[b-b8rcudewzl]{
     cursor:pointer;
+}
+#filterToggle[b-b8rcudewzl]{
+    transform:scale(1.5);
+
+}
+.filterLable[b-b8rcudewzl] {
+    color:black;
+   
+}
+.done[b-b8rcudewzl] {
+    background-color: #51ca593d;
+    border: 1px solid rgb(57, 191, 37);
+}
+#TagsFilterBox[b-b8rcudewzl] {
+    padding-left: 2rem;
+}
+.input-group input[b-b8rcudewzl]::placeholder {
+    font-size: 0.7rem;
+    color: rgba(79, 79, 79, 0,80);
+}
+#defaultCheck2[b-b8rcudewzl]{
+    font-size:0.7rem;
 }
 /* _content/TodoWebsite/Shared/MainLayout.razor.rz.scp.css */
 .page[b-0w5zs2cqf7] {

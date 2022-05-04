@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace TodoWebsite.Data
 {
@@ -17,6 +18,17 @@ namespace TodoWebsite.Data
                 });
             }
             return list;
+
+
+        }
+        public static string ReturnStringOfUnFormatedTags(List<Tag> tags) {
+            
+            StringBuilder sb = new StringBuilder();
+            foreach (var tag in tags) {
+                sb.Append(tag.TagValue.Remove(0, 1));
+                sb.Append(" ");
+            }
+            return sb.ToString();
 
 
         }

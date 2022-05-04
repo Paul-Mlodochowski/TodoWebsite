@@ -12,25 +12,46 @@
                 </button>
             </div>
             <div class="modal-body d-flex flex-column text-center ">
+                @if (isUpdating) {
+                    <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Update Title*</span>
+                  <input type="text"  class="form-control @BorderColorsChange["title"]" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" @bind="todoItem.Title" >
+                </div>
+
+                 <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Update Description*</span>
+                  <input type="text" class="form-control @BorderColorsChange["description"]" placeholder="Description" aria-label="Description" aria-describedby="basic-addon1" @bind="todoItem.Description">
+                </div>
+                 <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Update Tags*</span>
+                  <input type="text" class="form-control  @BorderColorsChange["tags"]" placeholder="Tags seperate by space" aria-label="Tags" aria-describedby="basic-addon1" @bind="updateString">
+                </div>
+                }else{
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">Add Title*</span>
-                  <input type="text" class="form-control @BorderColorsChange["title"]" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1" @bind="TitleText">
+                  <input type="text" class="form-control @BorderColorsChange["title"]" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" @bind="TitleText" >
                 </div>
 
                  <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">Add Description*</span>
-                  <input type="text" class="form-control @BorderColorsChange["description"]" placeholder="Description" aria-label="Username" aria-describedby="basic-addon1" @bind="DescriptionText">
+                  <input type="text" class="form-control @BorderColorsChange["description"]" placeholder="Description" aria-label="Description" aria-describedby="basic-addon1" @bind="DescriptionText">
                 </div>
                  <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">Add Tags*</span>
-                  <input type="text" class="form-control  @BorderColorsChange["tags"]" placeholder="Tags seperate by space" aria-label="Username" aria-describedby="basic-addon1" @bind="TagsText">
+                  <input type="text" class="form-control  @BorderColorsChange["tags"]" placeholder="Tags seperate by space" aria-label="Tags" aria-describedby="basic-addon1" @bind="TagsText">
                 </div>
+                }
                 @if (ShowDanger) {
                     <p class="text-danger">All values must be specified*</p>
                 }
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" @onclick="()=>{FormatToDb(); Close();}">Add</button>
+                @if (isUpdating) {
+                    <button type="button" class="btn btn-primary" @onclick="()=>{FormatToDbUpdate(); Close();}">Update</button>
+                }
+                else {
+                    <button type="button" class="btn btn-primary" @onclick="()=>{FormatToDb(); Close();}">Add</button>
+                }
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => Close()">Close</button>
             </div>
         </div>
@@ -43,7 +64,12 @@
 @code {
     [Parameter]
     public EventCallback<TodoList> AddToDb { get; set; }
+    [Parameter]
+    public EventCallback<TodoList> UpdateToDb { get; set; }
 
+    private TodoList todoItem;
+    private bool isUpdating = false;
+    private string updateString = "";
 
     public string ModalDisplay = "none;";
     public string ModalClass = "";
@@ -62,11 +88,25 @@
     };
 
 
-    public void Open()
+    public void Open() // do dodawania
     {
         ModalDisplay = "block;";
         ModalClass = "Show";
         ShowBackdrop = true;
+        isUpdating = false;
+        StateHasChanged();
+    }
+    public void Open(TodoList todoItem) // do edytowania
+    {
+        ModalDisplay = "block;";
+        ModalClass = "Show";
+        ShowBackdrop = true;
+
+        this.todoItem = todoItem;
+        updateString = TagFormater.ReturnStringOfUnFormatedTags(todoItem.Tags);
+        isUpdating = true;
+
+
         StateHasChanged();
     }
 
@@ -75,26 +115,43 @@
         ModalDisplay = "none";
         ModalClass = "";
         ShowBackdrop = false;
+        TitleText = null;
+        DescriptionText = null;
+        TagsText = null;
+        updateString = "";
+        ShowDanger = false;
         StateHasChanged();
     }
     private void FormatToDb() {
 
         if (checkIfValid()) {
-            
 
-                TodoList newTodoItem = new TodoList()
+
+            TodoList newTodoItem = new TodoList()
                     {
                         Title = TitleText,
                         Description = DescriptionText,
                         IsDone = false,
                         Date = DateTime.Now
                     };
-                var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
-                newTodoItem.Tags = listOfTags;
-                AddToDb.InvokeAsync(newTodoItem);
-            
+            var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
+            newTodoItem.Tags = listOfTags;
+            AddToDb.InvokeAsync(newTodoItem);
+
         }
 
+
+    }
+    private void FormatToDbUpdate() {
+        // Aby nie tworzyć kolejnej metody sprawdzającen
+        TitleText = todoItem.Title;
+        DescriptionText = todoItem.Description;
+        TagsText = updateString;
+        if (checkIfValid()) {
+                var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
+                todoItem.Tags = listOfTags;
+                UpdateToDb.InvokeAsync(this.todoItem);
+        }
 
     }
     private bool checkIfValid() {

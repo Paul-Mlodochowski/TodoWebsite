@@ -105,12 +105,13 @@ using TodoWebsite.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 59 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
+#line 155 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
       
 
     private TodoWebsite.Pages.Components.Popout Modal { get; set; }
     private List<TodoList> List { get; set; } = new List<TodoList>();
     private List<Tag> ListOfTags { get; set; } = new List<Tag>();
+    private bool IsDisabled { get; set; } = true;
 
     protected override void OnInitialized() {
         using (var dbContext = Db)
@@ -143,8 +144,19 @@ using TodoWebsite.Data;
             dbContex.TodoLists.Add(list);
             dbContex.AddRange(list.Tags);
             dbContex.SaveChanges();
-            ShowResults();
         }
+        ShowResults();
+    }
+    private void Update(TodoList list) {
+        using(var dbContex = new TodoDatabaseContex()){
+            var newTags = list.Tags;
+            var tagsToDelete = dbContex.Tags.Where(item => item.TodoListId == list.Id);
+            dbContex.Tags.RemoveRange(tagsToDelete);
+            dbContex.Tags.AddRange(newTags);
+            dbContex.TodoLists.Update(list);
+            dbContex.SaveChanges();
+        }
+        ShowResults();
     }
     private void Delete(int id) {
         using(var dbContex = new TodoDatabaseContex()){
@@ -152,10 +164,22 @@ using TodoWebsite.Data;
             var itemToDelete = dbContex.TodoLists.Where(item => item.Id == id).FirstOrDefault<TodoList>();
             var tagsToDelete = dbContex.Tags.Where(item => item.TodoListId == itemToDelete.Id);
             dbContex.TodoLists.Remove(itemToDelete);
-            dbContex.RemoveRange(tagsToDelete);
+            dbContex.Tags.RemoveRange(tagsToDelete);
             dbContex.SaveChanges();
-            ShowResults();
         }
+        ShowResults();
+    }
+    private void ChangeStatus(TodoList todoItem, object obj) {
+        var newValue = (bool)obj;
+        using(var dbContex = new TodoDatabaseContex()){
+            todoItem.IsDone = newValue;
+            dbContex.TodoLists.Update(todoItem);
+            dbContex.SaveChanges();
+        }
+        ShowResults();
+    }
+    private void ToggleFilter() { 
+        IsDisabled = !IsDisabled;
     }
 
    
