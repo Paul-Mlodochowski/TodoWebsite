@@ -1,0 +1,14 @@
+2022-05-05 16:01:57.3001|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 16:01:57.8322|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 16:01:57.8322|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 16:01:57.8322|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 16:02:13.3390|0|INFO|TodoWebsite.Pages.Index|Dodano nowy item TodoWebsite.Data.TodoList 
+2022-05-05 19:13:12.0080|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:13:12.5928|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:13:12.6094|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:13:12.6286|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:13:28.1203|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z false na true o Id:  
+2022-05-05 19:14:25.0489|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z false na true o Id:  
+2022-05-05 19:14:25.7877|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z true na false o Id:  
+2022-05-05 19:14:26.6484|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 12 
+2022-05-05 19:14:58.6088|0|INFO|TodoWebsite.Pages.Index|Zaktualizowano  item TodoWebsite.Data.TodoList o Id 14 

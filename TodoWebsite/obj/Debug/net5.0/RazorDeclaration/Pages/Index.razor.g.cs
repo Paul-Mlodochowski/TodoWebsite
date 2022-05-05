@@ -98,7 +98,14 @@ using TodoWebsite.Data;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
-using System.Text.RegularExpressions;
+using Microsoft.Extensions.Logging;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
+using NLog;
 
 #line default
 #line hidden
@@ -118,7 +125,7 @@ using System.Text.RegularExpressions;
     private TodoWebsite.Pages.Components.Popout Modal { get; set; }
     private List<TodoList> List { get; set; } = new List<TodoList>();
     private List<Tag> ListOfTags { get; set; } = new List<Tag>();
-
+    private Logger logger = NLog.LogManager.GetCurrentClassLogger();
     protected override void OnInitialized() {
         using (var dbContext = Db)
         {
@@ -132,6 +139,8 @@ using System.Text.RegularExpressions;
             }
 
         }
+        
+        
 
         base.OnInitialized();
     }
@@ -154,6 +163,7 @@ using System.Text.RegularExpressions;
             dbContex.AddRange(list.Tags);
             dbContex.SaveChanges();
         }
+        logger.Info("Dodano nowy item {item} o id {id}",list,list.Id);
         ShowResults();
     }
     private void Update(TodoList list) {
@@ -165,6 +175,7 @@ using System.Text.RegularExpressions;
             dbContex.TodoLists.Update(list);
             dbContex.SaveChanges();
         }
+         logger.Info("Zaktualizowano  item {item} o Id {id}",list,list.Id);
         ShowResults();
     }
     private void Delete(int id) {
@@ -176,6 +187,7 @@ using System.Text.RegularExpressions;
             dbContex.Tags.RemoveRange(tagsToDelete);
             dbContex.SaveChanges();
         }
+        logger.Info("Usunięto item o Id {id}",id);
         ShowResults();
     }
     private void ChangeStatus(TodoList todoItem, object obj) {
@@ -185,6 +197,9 @@ using System.Text.RegularExpressions;
             dbContex.TodoLists.Update(todoItem);
             dbContex.SaveChanges();
         }
+        logger.Info("Zmieniono status z {value} na {newValue} o Id: ",!newValue, newValue, todoItem.Id);
+        
+
         ShowResults();
     }
     

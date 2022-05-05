@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "izGW8HM5TO8QybUHPVQyV+GkkZVymrErpU7BYOfTf8ruFz/6LpJLg6d2/wPjY5ogYAiVmMeE0dOfJjpN9zMLyQ==",
+  "dgSpecHash": "eGhVm38D5gUuJsJSdOjfzqyL8Qf6S0JQcMiFOx5GuFvWw1XVIgdn56lwSOr7AV3bBpXOlbDtLRVT9su6fhVjxg==",
   "success": true,
   "projectFilePath": "C:\\Users\\PAWEŁ\\Desktop\\Vis Studio\\TodoWebsite\\TodoWebsite\\TodoWebsite.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,8 @@
     "C:\\Users\\PAWEŁ\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\PAWEŁ\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\PAWEŁ\\.nuget\\packages\\nlog\\4.7.15\\nlog.4.7.15.nupkg.sha512",
+    "C:\\Users\\PAWEŁ\\.nuget\\packages\\nlog.extensions.logging\\1.7.4\\nlog.extensions.logging.1.7.4.nupkg.sha512",
+    "C:\\Users\\PAWEŁ\\.nuget\\packages\\nlog.web.aspnetcore\\4.14.0\\nlog.web.aspnetcore.4.14.0.nupkg.sha512",
     "C:\\Users\\PAWEŁ\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\PAWEŁ\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\PAWEŁ\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",

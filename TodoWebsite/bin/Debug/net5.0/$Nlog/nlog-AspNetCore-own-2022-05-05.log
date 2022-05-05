@@ -1,0 +1,11 @@
+2022-05-05 14:47:02.5377|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 14:47:02.5787|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 14:47:02.5787|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 14:47:03.7244|0|INFO|TodoWebsite.Pages.Index|Test dada |url: |action: |TodoWebsite.Pages.Index.OnInitialized
+2022-05-05 14:47:04.4974|0|INFO|TodoWebsite.Pages.Index|Test dada |url: |action: |TodoWebsite.Pages.Index.OnInitialized
+2022-05-05 15:58:24.5513|0|DEBUG|TodoWebsite.Program|init main |url: |action: |TodoWebsite.Program.Main
+2022-05-05 15:58:24.7899|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 15:58:24.7899|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 15:58:24.8024|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 15:58:25.6262|0|INFO|TodoWebsite.Pages.Index|Bugggggggg |url: https://localhost/|action: |TodoWebsite.Pages.Index.OnInitialized
+2022-05-05 15:58:25.8976|0|INFO|TodoWebsite.Pages.Index|Bugggggggg |url: https://localhost/_blazor|action: |TodoWebsite.Pages.Index.OnInitialized

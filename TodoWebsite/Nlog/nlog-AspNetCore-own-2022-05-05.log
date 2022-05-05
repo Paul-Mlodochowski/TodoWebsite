@@ -1,0 +1,14 @@
+2022-05-05 16:01:57.3001|0|DEBUG|TodoWebsite.Program|init main |url: |action: |TodoWebsite.Program.Main
+2022-05-05 16:01:57.8322|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 16:01:57.8322|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 16:01:57.8322|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 16:02:13.3390|0|INFO|TodoWebsite.Pages.Index|Dodano nowy item TodoWebsite.Data.TodoList |url: https://localhost/_blazor|action: |TodoWebsite.Pages.Index.AddNewTodoTask
+2022-05-05 19:13:12.0080|0|DEBUG|TodoWebsite.Program|init main |url: |action: |TodoWebsite.Program.Main
+2022-05-05 19:13:12.5928|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 19:13:12.6094|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 19:13:12.6286|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite |url: |action: |Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+2022-05-05 19:13:28.1203|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z false na true o Id:  |url: https://localhost/_blazor|action: |TodoWebsite.Pages.Index.ChangeStatus
+2022-05-05 19:14:25.0489|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z false na true o Id:  |url: https://localhost/_blazor|action: |TodoWebsite.Pages.Index.ChangeStatus
+2022-05-05 19:14:25.7877|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z true na false o Id:  |url: https://localhost/_blazor|action: |TodoWebsite.Pages.Index.ChangeStatus
+2022-05-05 19:14:26.6484|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 12 |url: https://localhost/_blazor|action: |TodoWebsite.Pages.Index.Delete
+2022-05-05 19:14:58.6088|0|INFO|TodoWebsite.Pages.Index|Zaktualizowano  item TodoWebsite.Data.TodoList o Id 14 |url: https://localhost/_blazor|action: |TodoWebsite.Pages.Index.Update

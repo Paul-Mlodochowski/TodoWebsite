@@ -1,0 +1,196 @@
+2022-05-05 14:47:02.2255 Info Message Template Auto Format enabled
+2022-05-05 14:47:02.2362 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 14:47:02.2748 Info Adding target FileTarget(Name=allfile)
+2022-05-05 14:47:02.2748 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 14:47:02.2748 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 14:47:02.2969 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 14:47:02.2969 Info Configuration initialized.
+2022-05-05 14:47:02.2969 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 14:48:18.5263 Info Message Template Auto Format enabled
+2022-05-05 14:48:18.5314 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 14:48:18.5578 Info Adding target FileTarget(Name=allfile)
+2022-05-05 14:48:18.5578 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 14:48:18.5647 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 14:48:18.5777 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 14:48:18.5777 Info Configuration initialized.
+2022-05-05 14:48:18.5777 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 14:48:34.2324 Info Message Template Auto Format enabled
+2022-05-05 14:48:34.2399 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 14:48:34.2680 Info Adding target FileTarget(Name=allfile)
+2022-05-05 14:48:34.2680 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 14:48:34.2680 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 14:48:34.2872 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 14:48:34.2981 Info Configuration initialized.
+2022-05-05 14:48:34.2981 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 14:48:49.2581 Info Message Template Auto Format enabled
+2022-05-05 14:48:49.2665 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 14:48:49.2946 Info Adding target FileTarget(Name=allfile)
+2022-05-05 14:48:49.2989 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 14:48:49.2989 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 14:48:49.3167 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 14:48:49.3292 Info Configuration initialized.
+2022-05-05 14:48:49.3292 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 14:49:54.0069 Info Message Template Auto Format enabled
+2022-05-05 14:49:54.0069 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 14:49:54.0436 Info Adding target FileTarget(Name=allfile)
+2022-05-05 14:49:54.0478 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 14:49:54.0478 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 14:49:54.0656 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 14:49:54.0656 Info Configuration initialized.
+2022-05-05 14:49:54.0656 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 14:51:05.5848 Info Message Template Auto Format enabled
+2022-05-05 14:51:05.5848 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 14:51:05.6165 Info Adding target FileTarget(Name=allfile)
+2022-05-05 14:51:05.6165 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 14:51:05.6165 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 14:51:05.6376 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 14:51:05.6475 Info Configuration initialized.
+2022-05-05 14:51:05.6475 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 14:52:38.5487 Info Message Template Auto Format enabled
+2022-05-05 14:52:38.5487 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 14:52:38.5862 Info Adding target FileTarget(Name=allfile)
+2022-05-05 14:52:38.5862 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 14:52:38.5949 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 14:52:38.6096 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 14:52:38.6096 Info Configuration initialized.
+2022-05-05 14:52:38.6096 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 14:54:28.0400 Info Message Template Auto Format enabled
+2022-05-05 14:54:28.0490 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 14:54:28.0893 Info Adding target FileTarget(Name=allfile)
+2022-05-05 14:54:28.0937 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 14:54:28.0937 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 14:54:28.1103 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 14:54:28.1103 Info Configuration initialized.
+2022-05-05 14:54:28.1256 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 15:44:42.4522 Info Message Template Auto Format enabled
+2022-05-05 15:44:42.4633 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:44:42.5082 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:44:42.5166 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:44:42.5166 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:44:42.5371 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:44:42.5512 Info Configuration initialized.
+2022-05-05 15:44:42.5512 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 15:45:13.7416 Info Message Template Auto Format enabled
+2022-05-05 15:45:13.7505 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:45:13.7763 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:45:13.7763 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:45:13.7763 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:45:13.7936 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:45:13.8025 Info Configuration initialized.
+2022-05-05 15:45:13.8025 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.15.867. Product version: 4.7.15+a821647c37ac7a58c6bef2a446847b362de787eb. GlobalAssemblyCache: False
+2022-05-05 15:46:16.1804 Info Message Template Auto Format enabled
+2022-05-05 15:46:16.1973 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:46:16.2457 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:46:16.2610 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:46:16.2681 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:46:16.3043 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:46:34.3057 Info Message Template Auto Format enabled
+2022-05-05 15:46:34.3149 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:46:34.3420 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:46:34.3469 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:46:34.3469 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:46:34.3684 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:47:16.7574 Info Message Template Auto Format enabled
+2022-05-05 15:47:16.7574 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:47:16.7944 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:47:16.7992 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:47:16.7992 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:47:16.8239 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:48:36.8206 Info Message Template Auto Format enabled
+2022-05-05 15:48:36.8206 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:48:36.8531 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:48:36.8531 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:48:36.8609 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:48:36.8785 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:49:18.1886 Info Message Template Auto Format enabled
+2022-05-05 15:49:18.2098 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:49:18.2714 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:49:18.2860 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:49:18.2860 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:49:18.3289 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:51:26.1780 Info Message Template Auto Format enabled
+2022-05-05 15:51:26.2180 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:51:26.2996 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:51:26.3212 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:51:26.3309 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:51:26.3875 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:52:40.1368 Info Message Template Auto Format enabled
+2022-05-05 15:52:40.1473 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:52:40.1799 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:52:40.1891 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:52:40.1891 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:52:40.2268 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:52:55.6771 Info Message Template Auto Format enabled
+2022-05-05 15:52:55.7044 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:52:55.7571 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:52:55.7672 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:52:55.7672 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:52:55.8120 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:53:54.5880 Info Message Template Auto Format enabled
+2022-05-05 15:53:54.5940 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:53:54.6214 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:53:54.6257 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:53:54.6257 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:53:54.6472 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:55:53.1771 Info Message Template Auto Format enabled
+2022-05-05 15:55:53.1928 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:55:53.2215 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:55:53.2215 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:55:53.2215 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:55:53.2475 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:56:27.7270 Info Message Template Auto Format enabled
+2022-05-05 15:56:27.7270 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:56:27.7781 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:56:27.7827 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:56:27.7827 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:56:27.8049 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:56:59.4241 Info Message Template Auto Format enabled
+2022-05-05 15:56:59.4241 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:56:59.4597 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:56:59.4597 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:56:59.4708 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:56:59.4980 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:57:23.3693 Info Message Template Auto Format enabled
+2022-05-05 15:57:23.3693 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:57:23.4014 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:57:23.4014 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:57:23.4094 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:57:23.4272 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:57:32.8342 Info Message Template Auto Format enabled
+2022-05-05 15:57:32.8641 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:57:32.9422 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:57:32.9640 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:57:32.9735 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:57:33.0177 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:58:24.4078 Info Message Template Auto Format enabled
+2022-05-05 15:58:24.4078 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:58:24.4769 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:58:24.4855 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:58:24.4855 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:58:24.5300 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 15:59:07.5325 Info Message Template Auto Format enabled
+2022-05-05 15:59:07.5325 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 15:59:07.5754 Info Adding target FileTarget(Name=allfile)
+2022-05-05 15:59:07.5754 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 15:59:07.5891 Info Adding target ConsoleTarget(Name=lifetimeConsole)
+2022-05-05 15:59:07.6117 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 16:00:24.6626 Info Message Template Auto Format enabled
+2022-05-05 16:00:24.6626 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 16:00:24.6940 Info Adding target FileTarget(Name=allfile)
+2022-05-05 16:00:24.6940 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 16:00:24.7223 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=60, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 16:00:33.0157 Info Message Template Auto Format enabled
+2022-05-05 16:00:33.0215 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 16:00:33.0488 Info Adding target FileTarget(Name=allfile)
+2022-05-05 16:00:33.0488 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 16:00:33.0713 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 16:01:57.2280 Info Message Template Auto Format enabled
+2022-05-05 16:01:57.2280 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 16:01:57.2598 Info Adding target FileTarget(Name=allfile)
+2022-05-05 16:01:57.2598 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 16:01:57.2819 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 19:13:11.9168 Info Message Template Auto Format enabled
+2022-05-05 19:13:11.9254 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 19:13:11.9571 Info Adding target FileTarget(Name=allfile)
+2022-05-05 19:13:11.9571 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 19:13:11.9848 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
