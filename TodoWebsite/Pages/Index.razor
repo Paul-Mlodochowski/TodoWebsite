@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using System.Text.RegularExpressions
 @inject TodoDatabaseContex Db
 
 
@@ -121,7 +122,7 @@
                             <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z"/>
                         </svg>
                     </span>
-                    <input type="text" class="form-control" placeholder="Filter by tags (seperate by space)">
+                    <input type="text" class="form-control" placeholder="Filter by tags (seperate by space)" @bind="FiltringOfTags">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">
@@ -129,7 +130,7 @@
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                         </svg>
                     </span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Search by title or description">
+                    <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Search by title or description" @bind="Searching">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">
@@ -230,19 +231,22 @@
             ShowResults();
     }
 
+    //Filtring
     private bool FiltringOfDone { get; set; } = false;
     private string FiltringOfDate { get; set; }
+    private string FiltringOfTags { get; set; }
+    private string Searching { get; set; }
 
     private void CheckWhichFiltringResultsUserIsUsing() {
         var filtringMethods = new List<Action>();
         List<TodoList> TodoItems = new List<TodoList>();
         using(var dbContex = new TodoDatabaseContex()){
             TodoItems = dbContex.TodoLists.ToList<TodoList>();
-             foreach (var item in dbContex.TodoLists)
-                {
-                    dbContex.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // To dodaje tagi do items
-                    
-                }
+            foreach (var item in dbContex.TodoLists)
+            {
+                dbContex.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // To dodaje tagi do items
+
+            }
             filtringMethods.Add(() =>
             {
                 var query = from item in TodoItems
@@ -275,9 +279,46 @@
                         TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
 
                 });
+            if(FiltringOfTags is not null && FiltringOfTags != "")
+                filtringMethods.Add(() =>
+                {
+                    List<Tag> listofTags = TagFormater.ReturnListOfFormatedTags(FiltringOfTags);
+                    List<string> valueToCheck = new List<string>();
+                    listofTags.ForEach(t =>valueToCheck.Add(t.TagValue.ToLower()));
+
+
+                    var listOfTodoList = new List<TodoList>();
+                    foreach(var value in valueToCheck) {
+                        foreach(var todoItem in TodoItems) {
+                            foreach(var todoTag in todoItem.Tags) {
+                                if(String.Compare(todoTag.TagValue.ToLower(),value) == 0) {
+                                    listOfTodoList.Add(todoItem);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if(listOfTodoList.Count > 0)
+                        TodoItems = TodoItems.Where(t => listOfTodoList.Contains(t)).ToList<TodoList>();
+
+
+
+                });
+            if(Searching is not null && Searching != "")
+                filtringMethods.Add(() =>
+                {
+                    Regex rx = new Regex(@Searching, RegexOptions.IgnoreCase);
+
+                    var query = from item in TodoItems
+                                where rx.IsMatch(item.Title) || rx.IsMatch(item.Description)
+                                select item;
+                    if(query is not null)
+                        TodoItems = TodoItems.Where(t => query.Contains(t)).ToList<TodoList>();
+
+                });
 
         };
-        foreach (var action in filtringMethods)
+        foreach (var action in filtringMethods) // wywołuje wszystkie pożądane funkcjee
         {
             action.Invoke();
         }

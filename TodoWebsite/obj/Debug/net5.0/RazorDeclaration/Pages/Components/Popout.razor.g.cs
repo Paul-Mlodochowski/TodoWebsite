@@ -164,6 +164,8 @@ using TodoWebsite.Data;
         TagsText = null;
         updateString = "";
         ShowDanger = false;
+        foreach (var key in BorderColorsChange.Keys)
+            BorderColorsChange[key] = "border-primary";
         StateHasChanged();
     }
     private void FormatToDb() {
@@ -181,7 +183,7 @@ using TodoWebsite.Data;
             var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
             newTodoItem.Tags = listOfTags;
             AddToDb.InvokeAsync(newTodoItem);
-
+            Close();
         }
 
 
@@ -195,6 +197,7 @@ using TodoWebsite.Data;
                 var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
                 todoItem.Tags = listOfTags;
                 UpdateToDb.InvokeAsync(this.todoItem);
+                Close();
         }
 
     }

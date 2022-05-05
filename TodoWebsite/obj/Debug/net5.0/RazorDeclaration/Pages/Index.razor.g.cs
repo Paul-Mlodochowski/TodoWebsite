@@ -96,6 +96,13 @@ using TodoWebsite.Data;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
+using System.Text.RegularExpressions;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,7 +112,7 @@ using TodoWebsite.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 155 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
+#line 156 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
       
 
     private TodoWebsite.Pages.Components.Popout Modal { get; set; }
@@ -184,19 +191,22 @@ using TodoWebsite.Data;
             ShowResults();
     }
 
+    //Filtring
     private bool FiltringOfDone { get; set; } = false;
     private string FiltringOfDate { get; set; }
+    private string FiltringOfTags { get; set; }
+    private string Searching { get; set; }
 
     private void CheckWhichFiltringResultsUserIsUsing() {
         var filtringMethods = new List<Action>();
         List<TodoList> TodoItems = new List<TodoList>();
         using(var dbContex = new TodoDatabaseContex()){
             TodoItems = dbContex.TodoLists.ToList<TodoList>();
-             foreach (var item in dbContex.TodoLists)
-                {
-                    dbContex.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // To dodaje tagi do items
-                    
-                }
+            foreach (var item in dbContex.TodoLists)
+            {
+                dbContex.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // To dodaje tagi do items
+
+            }
             filtringMethods.Add(() =>
             {
                 var query = from item in TodoItems
@@ -229,9 +239,46 @@ using TodoWebsite.Data;
                         TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
 
                 });
+            if(FiltringOfTags is not null && FiltringOfTags != "")
+                filtringMethods.Add(() =>
+                {
+                    List<Tag> listofTags = TagFormater.ReturnListOfFormatedTags(FiltringOfTags);
+                    List<string> valueToCheck = new List<string>();
+                    listofTags.ForEach(t =>valueToCheck.Add(t.TagValue.ToLower()));
+
+
+                    var listOfTodoList = new List<TodoList>();
+                    foreach(var value in valueToCheck) {
+                        foreach(var todoItem in TodoItems) {
+                            foreach(var todoTag in todoItem.Tags) {
+                                if(String.Compare(todoTag.TagValue.ToLower(),value) == 0) {
+                                    listOfTodoList.Add(todoItem);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if(listOfTodoList.Count > 0)
+                        TodoItems = TodoItems.Where(t => listOfTodoList.Contains(t)).ToList<TodoList>();
+
+
+
+                });
+            if(Searching is not null && Searching != "")
+                filtringMethods.Add(() =>
+                {
+                    Regex rx = new Regex(@Searching, RegexOptions.IgnoreCase);
+
+                    var query = from item in TodoItems
+                                where rx.IsMatch(item.Title) || rx.IsMatch(item.Description)
+                                select item;
+                    if(query is not null)
+                        TodoItems = TodoItems.Where(t => query.Contains(t)).ToList<TodoList>();
+
+                });
 
         };
-        foreach (var action in filtringMethods)
+        foreach (var action in filtringMethods) // wywołuje wszystkie pożądane funkcjee
         {
             action.Invoke();
         }

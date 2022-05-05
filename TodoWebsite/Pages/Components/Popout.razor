@@ -47,10 +47,10 @@
             </div>
             <div class="modal-footer">
                 @if (isUpdating) {
-                    <button type="button" class="btn btn-primary" @onclick="()=>{FormatToDbUpdate(); Close();}">Update</button>
+                    <button type="button" class="btn btn-primary" @onclick="()=>FormatToDbUpdate()">Update</button>
                 }
                 else {
-                    <button type="button" class="btn btn-primary" @onclick="()=>{FormatToDb(); Close();}">Add</button>
+                    <button type="button" class="btn btn-primary" @onclick="()=>FormatToDb()">Add</button>
                 }
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" @onclick="() => Close()">Close</button>
             </div>
@@ -120,6 +120,8 @@
         TagsText = null;
         updateString = "";
         ShowDanger = false;
+        foreach (var key in BorderColorsChange.Keys)
+            BorderColorsChange[key] = "border-primary";
         StateHasChanged();
     }
     private void FormatToDb() {
@@ -137,7 +139,7 @@
             var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
             newTodoItem.Tags = listOfTags;
             AddToDb.InvokeAsync(newTodoItem);
-
+            Close();
         }
 
 
@@ -151,6 +153,7 @@
                 var listOfTags = TagFormater.ReturnListOfFormatedTags(TagsText);
                 todoItem.Tags = listOfTags;
                 UpdateToDb.InvokeAsync(this.todoItem);
+                Close();
         }
 
     }
