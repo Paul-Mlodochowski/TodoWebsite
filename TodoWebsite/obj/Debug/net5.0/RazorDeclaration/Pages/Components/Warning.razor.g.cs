@@ -104,7 +104,7 @@ using TodoWebsite.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 21 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\Warning.razor"
+#line 23 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\Warning.razor"
        
 
     [Parameter]

@@ -589,3 +589,13 @@
 2022-05-05 21:13:53.9465 Info Adding target FileTarget(Name=allfile)
 2022-05-05 21:13:53.9561 Info Adding target FileTarget(Name=ownFile-web)
 2022-05-05 21:13:53.9841 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 21:16:30.9591 Info Message Template Auto Format enabled
+2022-05-05 21:16:30.9591 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 21:16:30.9929 Info Adding target FileTarget(Name=allfile)
+2022-05-05 21:16:30.9929 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 21:16:31.0163 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-05 21:18:17.3601 Info Message Template Auto Format enabled
+2022-05-05 21:18:17.3601 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-05 21:18:17.4030 Info Adding target FileTarget(Name=allfile)
+2022-05-05 21:18:17.4084 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-05 21:18:17.4321 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
