@@ -33,7 +33,6 @@ namespace TodoWebsite
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddDbContext<TodoDatabaseContex>();
-            
 
         }
 

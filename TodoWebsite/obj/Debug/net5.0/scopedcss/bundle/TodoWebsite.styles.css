@@ -47,6 +47,9 @@
 #TagsFilterBox[b-b8rcudewzl] {
     padding-left: 2rem;
 }
+#SortOfDone[b-b8rcudewzl] {
+    transform: scale(1.5);
+}
 /* _content/TodoWebsite/Shared/MainLayout.razor.rz.scp.css */
 .page[b-0w5zs2cqf7] {
     position: relative;

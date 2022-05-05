@@ -91,3 +91,5 @@ C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\obj\Debug\net5.0\scop
 C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\nlog.config
 C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.Extensions.Logging.dll
 C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.Web.AspNetCore.dll
+C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\obj\Debug\net5.0\RazorDeclaration\Pages\Components\Warning.razor.g.cs
+C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\obj\Debug\net5.0\Razor\Pages\Components\Warning.razor.g.cs

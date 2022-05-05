@@ -12,3 +12,361 @@
 2022-05-05 19:14:25.7877|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z true na false o Id:  
 2022-05-05 19:14:26.6484|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 12 
 2022-05-05 19:14:58.6088|0|INFO|TodoWebsite.Pages.Index|Zaktualizowano  item TodoWebsite.Data.TodoList o Id 14 
+2022-05-05 19:16:27.1768|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:16:27.9429|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:16:27.9429|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:16:27.9541|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:17:36.2545|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:17:36.7761|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:17:36.7863|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:17:36.7863|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:17:41.2242|100|WARN|Microsoft.AspNetCore.Components.Server.Circuits.RemoteRenderer|Unhandled exception rendering component: The string 'aaa' was not recognized as a valid DateTime. There is an unknown word starting at index '0'. System.FormatException: The string 'aaa' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.DateTime.Parse(String s)
+   at TodoWebsite.Pages.Components.FiltringComponet.<>c__DisplayClass30_0.<CheckWhichFiltringResultsUserIsUsing>b__1() in C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\FiltringComponet.razor:line 146
+   at TodoWebsite.Pages.Components.FiltringComponet.CheckWhichFiltringResultsUserIsUsing() in C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\FiltringComponet.razor:line 203
+   at Microsoft.AspNetCore.Components.EventCallbackWorkItem.InvokeAsync[T](MulticastDelegate delegate, T arg)
+   at Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IHandleEvent.HandleEventAsync(EventCallbackWorkItem callback, Object arg)
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.DispatchEventAsync(UInt64 eventHandlerId, EventFieldInfo fieldInfo, EventArgs eventArgs)
+2022-05-05 19:17:41.2568|111|ERROR|Microsoft.AspNetCore.Components.Server.Circuits.CircuitHost|Unhandled exception in circuit 'bfjCPxncJorxu0aLYS53rjmkKyTsMmnF_4mb_SMdxfU'. System.FormatException: The string 'aaa' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.DateTime.Parse(String s)
+   at TodoWebsite.Pages.Components.FiltringComponet.<>c__DisplayClass30_0.<CheckWhichFiltringResultsUserIsUsing>b__1() in C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\FiltringComponet.razor:line 146
+   at TodoWebsite.Pages.Components.FiltringComponet.CheckWhichFiltringResultsUserIsUsing() in C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\FiltringComponet.razor:line 203
+   at Microsoft.AspNetCore.Components.EventCallbackWorkItem.InvokeAsync[T](MulticastDelegate delegate, T arg)
+   at Microsoft.AspNetCore.Components.ComponentBase.Microsoft.AspNetCore.Components.IHandleEvent.HandleEventAsync(EventCallbackWorkItem callback, Object arg)
+   at Microsoft.AspNetCore.Components.RenderTree.Renderer.DispatchEventAsync(UInt64 eventHandlerId, EventFieldInfo fieldInfo, EventArgs eventArgs)
+2022-05-05 19:18:02.0648|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:18:02.3332|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:18:02.3332|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:18:02.3481|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:19:57.4295|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:19:58.2249|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:19:58.2383|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:19:58.2383|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:20:35.8085|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:20:36.6159|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:20:36.6339|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:20:36.6505|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:20:42.5560|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:20:43.5866|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:20:43.6081|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:20:43.6199|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:21:24.4252|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:21:24.9264|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:21:24.9264|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:21:24.9401|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:22:38.3728|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:22:39.4169|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:22:39.4261|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:22:39.4378|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:22:50.7259|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:22:51.6199|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:22:51.6373|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:22:51.6502|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:25:41.1871|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:25:41.4272|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:25:41.4272|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:25:41.4413|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:27:13.9498|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:27:14.2081|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:27:14.2193|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:27:14.2193|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:27:51.3007|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:27:51.9828|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:27:51.9920|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:27:52.0036|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:28:13.6970|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:28:14.8438|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:28:14.8611|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:28:14.8611|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:29:20.0413|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:29:20.5676|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:29:20.5676|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:29:20.5827|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:38:08.7140|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:38:08.9497|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:38:08.9569|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:38:08.9689|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:39:19.2791|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:39:19.7826|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:39:19.7826|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:39:19.8001|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:40:07.4886|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:40:08.1001|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:40:08.1001|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:40:08.1155|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:40:31.3773|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:40:32.2047|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:40:32.2047|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:40:32.2047|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:42:22.8635|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:42:23.4103|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:42:23.4103|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:42:23.4256|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:42:53.0500|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:42:53.5748|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:42:53.5846|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:42:53.5846|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:43:18.9386|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:43:19.7084|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:43:19.7084|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:43:19.7191|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:43:59.8017|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:44:00.3284|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:44:00.3284|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:44:00.3284|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:44:26.1678|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:44:26.9971|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:44:27.0017|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:44:27.0017|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:46:21.0432|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:46:21.9869|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:46:21.9994|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:46:21.9994|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:47:05.6272|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:47:06.1792|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:47:06.1877|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:47:06.1877|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:47:29.8193|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:47:30.3867|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:47:30.3981|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:47:30.3981|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:47:45.9551|0|INFO|TodoWebsite.Pages.Index|Zaktualizowano  item TodoWebsite.Data.TodoList o Id 11 
+2022-05-05 19:47:50.8390|0|INFO|TodoWebsite.Pages.Index|Dodano nowy item TodoWebsite.Data.TodoList o id 15 
+2022-05-05 19:47:51.8552|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 15 
+2022-05-05 19:48:08.9899|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:48:09.5044|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:48:09.5150|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:48:09.5150|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:50:09.5327|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:50:10.3909|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:50:10.4065|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:50:10.4065|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:53:43.7236|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:53:44.2895|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:53:44.2964|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:53:44.2964|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:57:15.6425|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:57:16.2030|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:57:16.2030|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:57:16.2203|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 19:57:36.7540|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 19:57:37.0031|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 19:57:37.0031|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 19:57:37.0197|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:01:21.0953|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:01:21.6635|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:01:21.6635|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:01:21.6789|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:01:33.5514|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:01:34.0944|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:01:34.0944|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:01:34.1102|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:01:46.8543|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:01:47.3891|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:01:47.3966|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:01:47.3966|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:02:03.8612|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:02:04.4088|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:02:04.4088|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:02:04.4088|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:02:10.6255|0|INFO|TodoWebsite.Pages.Index|Zaktualizowano  item TodoWebsite.Data.TodoList o Id 13 
+2022-05-05 20:02:16.4503|0|INFO|TodoWebsite.Pages.Index|Dodano nowy item TodoWebsite.Data.TodoList o id 16 
+2022-05-05 20:02:18.4127|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 16 
+2022-05-05 20:02:55.7740|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:02:56.3112|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:02:56.3211|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:02:56.3301|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:04:46.2890|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:04:46.7974|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:04:46.7974|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:04:46.8130|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:04:58.3115|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:04:58.8278|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:04:58.8278|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:04:58.8437|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:05:11.1287|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:05:11.6432|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:05:11.6432|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:05:11.6590|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:06:22.5235|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:06:23.0566|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:06:23.0639|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:06:23.0639|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:06:37.2390|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:06:38.0342|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:06:38.0342|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:06:38.0522|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:07:01.7803|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:07:02.3129|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:07:02.3129|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:07:02.3129|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:07:11.7546|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:07:12.3311|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:07:12.3311|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:07:12.3311|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:07:59.7988|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:08:00.0467|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:08:00.0467|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:08:00.0641|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:08:18.8859|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:08:19.4316|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:08:19.4395|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:08:19.4395|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:08:37.6540|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:08:38.1686|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:08:38.1758|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:08:38.1758|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:08:52.1990|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:08:52.9725|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:08:52.9725|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:08:52.9845|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:09:07.6736|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:09:08.1905|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:09:08.1905|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:09:08.1905|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:09:15.8837|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:09:16.6775|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:09:16.6775|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:09:16.6775|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:09:33.5138|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:09:34.0240|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:09:34.0240|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:09:34.0240|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:09:45.0577|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:09:45.5969|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:09:45.5969|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:09:45.5969|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:10:30.3354|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:10:30.9055|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:10:30.9135|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:10:30.9135|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:15:17.4197|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:15:18.6377|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:15:18.6498|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:15:18.6739|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:15:39.4173|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:15:40.4548|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:15:40.4548|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:15:40.4762|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:17:18.3034|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:17:19.2657|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:17:19.2657|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:17:19.2903|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:18:08.1709|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:18:08.4095|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:18:08.4095|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:18:08.4292|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:19:40.6424|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:19:42.1326|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:19:42.1455|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:19:42.1455|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:20:29.8196|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:20:31.1114|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:20:31.1259|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:20:31.1259|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:20:49.4771|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:20:51.0623|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:20:51.0778|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:20:51.0778|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:21:03.7159|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:21:05.1923|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:21:05.1923|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:21:05.2026|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:21:27.0882|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:21:27.3294|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:21:27.3294|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:21:27.3294|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:21:33.7574|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:21:34.0900|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:21:34.0928|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:21:34.0928|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:21:54.3052|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z false na true o Id: 11 
+2022-05-05 20:21:58.0191|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z true na false o Id: 11 
+2022-05-05 20:23:24.1770|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:23:24.4488|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:23:24.4563|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:23:24.4563|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:24:28.5847|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:24:29.1347|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:24:29.1421|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:24:29.1421|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:24:56.4903|0|INFO|TodoWebsite.Pages.Index|Dodano nowy item TodoWebsite.Data.TodoList o id 17 
+2022-05-05 20:24:58.4100|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 17 
+2022-05-05 20:25:10.2815|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:25:10.8247|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:25:10.8314|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:25:10.8314|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:28:27.0678|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:28:28.2131|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:28:28.2245|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:28:28.2393|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:28:33.9931|0|INFO|TodoWebsite.Pages.Index|Dodano nowy item TodoWebsite.Data.TodoList o id 18 
+2022-05-05 20:31:43.9008|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:31:45.3827|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:31:45.4065|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:31:45.4065|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:32:07.1153|0|INFO|TodoWebsite.Pages.Index|Dodano nowy item TodoWebsite.Data.TodoList o id 19 
+2022-05-05 20:32:11.5997|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z false na true o Id: 19 
+2022-05-05 20:32:20.6223|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 19 
+2022-05-05 20:34:48.5840|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:34:49.9086|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:34:49.9396|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:34:49.9553|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:35:33.7237|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:35:34.7831|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:35:34.7831|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:35:34.8127|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:35:42.5837|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 18 
+2022-05-05 20:36:00.9138|0|INFO|TodoWebsite.Pages.Index|Dodano nowy item TodoWebsite.Data.TodoList o id 20 
+2022-05-05 20:36:08.1593|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 20 
+2022-05-05 20:47:19.9458|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:47:21.1165|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:47:21.1428|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:47:21.1598|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:47:39.9500|0|ERROR|TodoWebsite.Pages.Index|Cannot add to db TodoWebsite.Data.TodoList 13 
+2022-05-05 20:48:38.6519|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:48:39.4360|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:48:39.4428|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:48:39.4428|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:48:46.0218|0|INFO|TodoWebsite.Pages.Index|Zaktualizowano  item TodoWebsite.Data.TodoList o Id 13 
+2022-05-05 20:48:51.4275|0|INFO|TodoWebsite.Pages.Index|Zaktualizowano  item TodoWebsite.Data.TodoList o Id 13 
+2022-05-05 20:48:58.1148|0|INFO|TodoWebsite.Pages.Index|Zaktualizowano  item TodoWebsite.Data.TodoList o Id 13 
+2022-05-05 20:49:02.3345|0|INFO|TodoWebsite.Pages.Index|Zaktualizowano  item TodoWebsite.Data.TodoList o Id 13 
+2022-05-05 20:51:17.0039|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:51:17.5731|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:51:17.5810|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:51:17.5810|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:51:19.5347|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z false na true o Id: 13 
+2022-05-05 20:51:28.4962|0|INFO|TodoWebsite.Pages.Index|Zmieniono status z true na false o Id: 13 
+2022-05-05 20:52:20.4202|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:52:20.9460|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:52:20.9531|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:52:20.9531|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:53:50.4946|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:53:51.1667|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:53:51.1749|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:53:51.1749|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 20:57:10.9491|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 20:57:11.5026|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 20:57:11.5026|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 20:57:11.5182|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 21:03:23.7129|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 21:03:24.2626|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 21:03:24.2709|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 21:03:24.2829|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 21:03:39.9057|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 21:03:40.4410|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 21:03:40.4410|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 21:03:40.4561|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 21:04:02.8062|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 21:04:03.1108|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 21:04:03.1108|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 21:04:03.1285|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 21:13:54.0082|0|DEBUG|TodoWebsite.Program|init main 
+2022-05-05 21:13:55.0827|0|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2022-05-05 21:13:55.0988|0|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2022-05-05 21:13:55.0988|0|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite 
+2022-05-05 21:14:13.5224|0|INFO|TodoWebsite.Pages.Index|Dodano nowy item TodoWebsite.Data.TodoList o id 21 
+2022-05-05 21:14:24.9753|0|INFO|TodoWebsite.Pages.Index|Usunięto item o Id 21 

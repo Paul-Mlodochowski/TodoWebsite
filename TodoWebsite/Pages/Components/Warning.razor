@@ -1,0 +1,43 @@
+﻿<div class="modal @ModalClass" id="staticBackdrop"  tabindex="-1"  style="display:@ModalDisplay">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Are you sure?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">    
+        Do you want to delete this task?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="Close">Close</button>
+        <button type="button" class="btn btn-primary" @onclick="()=>{ConfirmedDelete.InvokeAsync(Id.Value);Close();}">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+@if (showBackdrop) {
+    <div class="modal-backdrop fade show"></div>
+}
+@code {
+
+    [Parameter]
+    public EventCallback<int> ConfirmedDelete { get; set; }
+    private string ModalClass;
+    private string ModalDisplay;
+    private int? Id;
+    private bool showBackdrop = false;
+    public void Open(int Id) {
+        ModalDisplay = "block";
+        ModalClass = "Show";
+        showBackdrop = true;
+        this.Id = Id;
+        StateHasChanged();
+    }
+    public void Close() {
+        ModalDisplay = "none";
+        ModalClass = "";
+        showBackdrop = false;
+        this.Id = null;
+        StateHasChanged();
+    }
+}

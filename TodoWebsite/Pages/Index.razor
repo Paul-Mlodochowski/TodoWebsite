@@ -1,14 +1,30 @@
 ﻿@page "/"
+@using Microsoft.EntityFrameworkCore
 @using Microsoft.Extensions.Logging
 @using NLog
 @inject TodoDatabaseContex Db
 
 <main class="w-100 d-flex flex-row">
     <section class="w-50 d-flex flex-column">
-
-    <h1 class="mb-3">Todo List</h1>
-    
+        <div class="d-flex row mb-3 mt-1">
+            <h1 class="mb-3 align-self-start">Todo List</h1>
+            <div class="form-check align-self-center ml-5">
+              <input class="form-check-input" type="checkbox" value="" id="SortOfDone" @onchange="eventArgs => {SortByDone(eventArgs.Value);}">
+              <label class="form-check-label text-muted" for="SortOfDone">
+                Sort by undone Tasks
+              </label>
+            </div>
+        </div>
     <div class="list-group w-55">
+            @if(List is null) {
+               <div class="spinner-border text-primary" role="status">
+                 
+                </div>
+            }
+            else if(List.Count == 0) {
+                <p class="text-muted"><b>No tasks to display!</b></p>
+            }
+            else
             @foreach (var TodoItem in List) {
                 
                 
@@ -22,7 +38,7 @@
                                     <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                 </svg>
                             </a>
-                            <a class="ml-3 pe-auto" @onclick="()=>Delete(TodoItem.Id)">
+                            <a class="ml-3 pe-auto" @onclick="()=>{Warning.Open(TodoItem.Id);}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#dc3545" class="bi bi-x-square" viewBox="0 0 16 16">
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
@@ -65,30 +81,36 @@
 </main>
 
 <TodoWebsite.Pages.Components.Popout @ref="Modal" AddToDb="AddNewTodoTask" UpdateToDb="Update"></TodoWebsite.Pages.Components.Popout>
+<TodoWebsite.Pages.Components.Warning @ref="Warning" ConfirmedDelete="Delete"></TodoWebsite.Pages.Components.Warning>
 
 @code{
 
     private TodoWebsite.Pages.Components.Popout Modal { get; set; }
-    private List<TodoList> List { get; set; } = new List<TodoList>();
+    private TodoWebsite.Pages.Components.Warning Warning { get; set; }
+    private List<TodoList> List { get; set; }
     private List<Tag> ListOfTags { get; set; } = new List<Tag>();
     private Logger logger = NLog.LogManager.GetCurrentClassLogger();
-    protected override void OnInitialized() {
+
+    protected async override Task OnInitializedAsync() {
+
+
         using (var dbContext = Db)
         {
+            var ListToAdd = new List<TodoList>(); 
 
             dbContext.Database.EnsureCreated();
 
             foreach (var item in dbContext.TodoLists)
             {
-                dbContext.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // To dodaje tagi do items
-                List.Add(item);
+                dbContext.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // dodaje tagi do items
+                ListToAdd.Add(item);
             }
+            List = new List<TodoList>(ListToAdd);
+
 
         }
-        
-        
 
-        base.OnInitialized();
+        await base.OnInitializedAsync();
     }
     private void TakeResault (List<TodoList> newTodo){
         List = newTodo;
@@ -103,11 +125,13 @@
             }
         }
     }
-    private void AddNewTodoTask(TodoList list) {
+    private async void  AddNewTodoTask(TodoList list) {
         using(var dbContex = new TodoDatabaseContex()){
-            dbContex.TodoLists.Add(list);
-            dbContex.AddRange(list.Tags);
-            dbContex.SaveChanges();
+            bool isCompleted = Task.WhenAll(dbContex.TodoLists.AddAsync(list).AsTask(),dbContex.AddRangeAsync(list.Tags)).IsCompletedSuccessfully;
+            if (!isCompleted)
+                logger.Error("Cannot add to db {list} Id: {id}", list, list.Id);
+
+            await dbContex.SaveChangesAsync();
         }
         logger.Info("Dodano nowy item {item} o id {id}",list,list.Id);
         ShowResults();
@@ -119,9 +143,10 @@
             dbContex.Tags.RemoveRange(tagsToDelete);
             dbContex.Tags.AddRange(newTags);
             dbContex.TodoLists.Update(list);
+            dbContex.SaveChangesFailed += (object x , SaveChangesFailedEventArgs a ) => logger.Error("Cannot Update to db {list} Id: {id}", list, list.Id);
             dbContex.SaveChanges();
         }
-         logger.Info("Zaktualizowano  item {item} o Id {id}",list,list.Id);
+        logger.Info("Zaktualizowano  item {item} o Id {id}",list,list.Id);
         ShowResults();
     }
     private void Delete(int id) {
@@ -131,6 +156,7 @@
             var tagsToDelete = dbContex.Tags.Where(item => item.TodoListId == itemToDelete.Id);
             dbContex.TodoLists.Remove(itemToDelete);
             dbContex.Tags.RemoveRange(tagsToDelete);
+            dbContex.SaveChangesFailed += (object x , SaveChangesFailedEventArgs a ) => logger.Error("Cannot Remove to db {list} Id: {id}", itemToDelete, itemToDelete.Id);
             dbContex.SaveChanges();
         }
         logger.Info("Usunięto item o Id {id}",id);
@@ -141,14 +167,32 @@
         using(var dbContex = new TodoDatabaseContex()){
             todoItem.IsDone = newValue;
             dbContex.TodoLists.Update(todoItem);
+            dbContex.SaveChangesFailed += (object x , SaveChangesFailedEventArgs a ) => logger.Error("Cannot Update to db {list} Id: {id}", todoItem, todoItem.Id);
             dbContex.SaveChanges();
         }
         logger.Info("Zmieniono status z {value} na {newValue} o Id: {id}",!newValue, newValue, todoItem.Id);
-        
+
 
         ShowResults();
     }
-    
+    private void SortByDone(object obj) {
+        if ((bool)obj)
+            using (var dbContex = new TodoDatabaseContex()) {
+                var TodoItems = dbContex.TodoLists;
+                foreach (var item in dbContex.TodoLists) {
+                    dbContex.Tags.Where(tag => tag.TodoListId == item.Id).ToList<Tag>();  // To dodaje tagi do items
+
+                }
+                var query = from item in TodoItems
+                            orderby item.IsDone
+                            select item;
+                List = query.ToList<TodoList>();
+
+            }
+        else
+            ShowResults();
+    }
+
 
     
 

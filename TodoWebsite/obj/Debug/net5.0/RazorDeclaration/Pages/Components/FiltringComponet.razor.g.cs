@@ -195,7 +195,7 @@ using System.Text.RegularExpressions;
                             }
                         }
                     }
-                    if(listOfTodoList.Count > 0)
+                    
                         TodoItems = TodoItems.Where(t => listOfTodoList.Contains(t)).ToList<TodoList>();
 
 

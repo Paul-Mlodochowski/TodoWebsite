@@ -104,7 +104,7 @@ using TodoWebsite.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 64 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\Popout.razor"
+#line 62 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\Popout.razor"
        
     [Parameter]
     public EventCallback<TodoList> AddToDb { get; set; }
@@ -134,7 +134,7 @@ using TodoWebsite.Data;
 
     public void Open() // do dodawania
     {
-        ModalDisplay = "block;";
+        ModalDisplay = "block";
         ModalClass = "Show";
         ShowBackdrop = true;
         isUpdating = false;
@@ -142,7 +142,7 @@ using TodoWebsite.Data;
     }
     public void Open(TodoList todoItem) // do edytowania
     {
-        ModalDisplay = "block;";
+        ModalDisplay = "block";
         ModalClass = "Show";
         ShowBackdrop = true;
 
@@ -230,7 +230,6 @@ using TodoWebsite.Data;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private TodoDatabaseContex Db { get; set; }
     }
 }
 #pragma warning restore 1591

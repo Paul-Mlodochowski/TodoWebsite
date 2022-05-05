@@ -25,3 +25,6 @@
 #TagsFilterBox {
     padding-left: 2rem;
 }
+#SortOfDone {
+    transform: scale(1.5);
+}
