@@ -112,13 +112,12 @@ using System.Text.RegularExpressions;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 156 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
+#line 69 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Index.razor"
       
 
     private TodoWebsite.Pages.Components.Popout Modal { get; set; }
     private List<TodoList> List { get; set; } = new List<TodoList>();
     private List<Tag> ListOfTags { get; set; } = new List<Tag>();
-    private bool IsDisabled { get; set; } = true;
 
     protected override void OnInitialized() {
         using (var dbContext = Db)
@@ -135,6 +134,9 @@ using System.Text.RegularExpressions;
         }
 
         base.OnInitialized();
+    }
+    private void TakeResault (List<TodoList> newTodo){
+        List = newTodo;
     }
     private void ShowResults() {
         List.Clear();
@@ -185,106 +187,9 @@ using System.Text.RegularExpressions;
         }
         ShowResults();
     }
-    private void ToggleFilter() { 
-        IsDisabled = !IsDisabled;
-        if (IsDisabled)
-            ShowResults();
-    }
+    
 
-    //Filtring
-    private bool FiltringOfDone { get; set; } = false;
-    private string FiltringOfDate { get; set; }
-    private string FiltringOfTags { get; set; }
-    private string Searching { get; set; }
-
-    private void CheckWhichFiltringResultsUserIsUsing() {
-        var filtringMethods = new List<Action>();
-        List<TodoList> TodoItems = new List<TodoList>();
-        using(var dbContex = new TodoDatabaseContex()){
-            TodoItems = dbContex.TodoLists.ToList<TodoList>();
-            foreach (var item in dbContex.TodoLists)
-            {
-                dbContex.Tags.Where(tag => tag.TodoListId == item.Id ).ToList<Tag>();  // To dodaje tagi do items
-
-            }
-            filtringMethods.Add(() =>
-            {
-                var query = from item in TodoItems
-                            where item.IsDone == FiltringOfDone
-                            select item;
-
-                if(query is not null)
-                    TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
-
-            });
-            if(FiltringOfDate is not null && FiltringOfDate != "")
-                filtringMethods.Add(() =>
-                {
-                    DateTime userDate = new DateTime();
-                    try {
-                        userDate = DateTime.Parse(FiltringOfDate);
-                    }catch(ArgumentException) {
-                        FiltringOfDate = "Fill in proprate formated date!";
-                        return;
-                    }
-                    catch(FormatException) {
-                        FiltringOfDate = "Fill in proprate formated date!";
-                        return;
-                    }
-                    var query = from item in TodoItems
-                                where DateTime.Compare(item.Date,userDate) >= 0
-                                select item;
-
-                    if(query is not null)
-                        TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
-
-                });
-            if(FiltringOfTags is not null && FiltringOfTags != "")
-                filtringMethods.Add(() =>
-                {
-                    List<Tag> listofTags = TagFormater.ReturnListOfFormatedTags(FiltringOfTags);
-                    List<string> valueToCheck = new List<string>();
-                    listofTags.ForEach(t =>valueToCheck.Add(t.TagValue.ToLower()));
-
-
-                    var listOfTodoList = new List<TodoList>();
-                    foreach(var value in valueToCheck) {
-                        foreach(var todoItem in TodoItems) {
-                            foreach(var todoTag in todoItem.Tags) {
-                                if(String.Compare(todoTag.TagValue.ToLower(),value) == 0) {
-                                    listOfTodoList.Add(todoItem);
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    if(listOfTodoList.Count > 0)
-                        TodoItems = TodoItems.Where(t => listOfTodoList.Contains(t)).ToList<TodoList>();
-
-
-
-                });
-            if(Searching is not null && Searching != "")
-                filtringMethods.Add(() =>
-                {
-                    Regex rx = new Regex(@Searching, RegexOptions.IgnoreCase);
-
-                    var query = from item in TodoItems
-                                where rx.IsMatch(item.Title) || rx.IsMatch(item.Description)
-                                select item;
-                    if(query is not null)
-                        TodoItems = TodoItems.Where(t => query.Contains(t)).ToList<TodoList>();
-
-                });
-
-        };
-        foreach (var action in filtringMethods) // wywołuje wszystkie pożądane funkcjee
-        {
-            action.Invoke();
-        }
-        List = TodoItems;
-
-    }
+    
 
    
 
