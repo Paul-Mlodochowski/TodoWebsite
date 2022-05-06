@@ -83,7 +83,7 @@ else {
                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                 </svg>
             </span>
-            <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Search by Date dd-mm-yyyy"  @bind="FiltringOfDate">
+            <input type="date" class="form-control" aria-label="Sizing example input" placeholder="Search by Date dd-mm-yyyy"  @bind="FiltringOfDate">
             <div class="input-group mb-0 mt-3 d-flex justify-content-center">
                 <button type="button" class="btn btn-primary w-50" @onclick="CheckWhichFiltringResultsUserIsUsing">Filter</button>
             </div>
@@ -101,18 +101,21 @@ else {
     public EventCallback<List<TodoList>> ChangeList { get; set; }
     [Parameter]
     public EventCallback ShowResults { get; set; }
+    [Parameter]
+    public DateTime MinDateTime { get; set; }
 
 
 
     //Filtring
     private bool FiltringOfDone { get; set; } = false;
-    private string FiltringOfDate { get; set; }
+    private DateTime FiltringOfDate { get; set; }
     private string FiltringOfTags { get; set; }
     private string Searching { get; set; }
     private bool IsDisabled { get; set; } = true;
 
 
-    private void ToggleFilter() { 
+    private void ToggleFilter() {
+        FiltringOfDate = MinDateTime;
         IsDisabled = !IsDisabled;
         if (IsDisabled)
             ShowResults.InvokeAsync();
@@ -138,22 +141,11 @@ else {
                     TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
 
             });
-            if(FiltringOfDate is not null && FiltringOfDate != "")
+            if( DateTime.Compare(MinDateTime,FiltringOfDate) != 0)
                 filtringMethods.Add(() =>
                 {
-                    DateTime userDate = new DateTime();
-                    try {
-                        userDate = DateTime.Parse(FiltringOfDate);
-                    }catch(ArgumentException) {
-                        FiltringOfDate = "Fill in proprate formated date!";
-                        return;
-                    }
-                    catch(FormatException) {
-                        FiltringOfDate = "Fill in proprate formated date!";
-                        return;
-                    }
                     var query = from item in TodoItems
-                                where DateTime.Compare(item.Date,userDate) >= 0
+                                where DateTime.Compare(item.Date,FiltringOfDate) >= 0
                                 select item;
 
                     if(query is not null)

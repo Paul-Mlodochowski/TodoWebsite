@@ -74,7 +74,7 @@
         </div>
     </section>
     <section class="d-flex flex-column align-content-center align-items-center w-45">
-        <TodoWebsite.Pages.Components.FiltringComponet ShowResults="ShowResults" ChangeList="TakeResault"></TodoWebsite.Pages.Components.FiltringComponet>
+        <TodoWebsite.Pages.Components.FiltringComponet ShowResults="ShowResults" ChangeList="TakeResault" MinDateTime="MinDateValue"></TodoWebsite.Pages.Components.FiltringComponet>
 
     </section>
    
@@ -90,6 +90,7 @@
     private List<TodoList> List { get; set; }
     private List<Tag> ListOfTags { get; set; } = new List<Tag>();
     private Logger logger = NLog.LogManager.GetCurrentClassLogger();
+    private DateTime MinDateValue { get; set; }
 
     protected async override Task OnInitializedAsync() {
 
@@ -106,6 +107,8 @@
                 ListToAdd.Add(item);
             }
             List = new List<TodoList>(ListToAdd);
+            if (List.Count > 0)
+                SetMinDateValue();
 
 
         }
@@ -135,6 +138,8 @@
         }
         logger.Info("Dodano nowy item {item} o id {id}",list,list.Id);
         ShowResults();
+        if (List.Count == 0)
+                SetMinDateValue();
     }
     private void Update(TodoList list) {
         using(var dbContex = new TodoDatabaseContex()){
@@ -192,7 +197,15 @@
         else
             ShowResults();
     }
+    private void SetMinDateValue() {
+        using (var dbContex = new TodoDatabaseContex()) {
+                var TodoItems = dbContex.TodoLists;
+                var MinValue = (from item in TodoItems
+                               select item.Date).Min();
+                this.MinDateValue = MinValue;
 
+            }
+    }
 
     
 

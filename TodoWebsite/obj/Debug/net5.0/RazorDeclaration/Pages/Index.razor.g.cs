@@ -134,6 +134,7 @@ using NLog;
     private List<TodoList> List { get; set; }
     private List<Tag> ListOfTags { get; set; } = new List<Tag>();
     private Logger logger = NLog.LogManager.GetCurrentClassLogger();
+    private DateTime MinDateValue { get; set; }
 
     protected async override Task OnInitializedAsync() {
 
@@ -150,6 +151,8 @@ using NLog;
                 ListToAdd.Add(item);
             }
             List = new List<TodoList>(ListToAdd);
+            if (List.Count > 0)
+                SetMinDateValue();
 
 
         }
@@ -179,6 +182,8 @@ using NLog;
         }
         logger.Info("Dodano nowy item {item} o id {id}",list,list.Id);
         ShowResults();
+        if (List.Count == 0)
+                SetMinDateValue();
     }
     private void Update(TodoList list) {
         using(var dbContex = new TodoDatabaseContex()){
@@ -236,7 +241,15 @@ using NLog;
         else
             ShowResults();
     }
+    private void SetMinDateValue() {
+        using (var dbContex = new TodoDatabaseContex()) {
+                var TodoItems = dbContex.TodoLists;
+                var MinValue = (from item in TodoItems
+                               select item.Date).Min();
+                this.MinDateValue = MinValue;
 
+            }
+    }
 
     
 

@@ -117,18 +117,21 @@ using System.Text.RegularExpressions;
     public EventCallback<List<TodoList>> ChangeList { get; set; }
     [Parameter]
     public EventCallback ShowResults { get; set; }
+    [Parameter]
+    public DateTime MinDateTime { get; set; }
 
 
 
     //Filtring
     private bool FiltringOfDone { get; set; } = false;
-    private string FiltringOfDate { get; set; }
+    private DateTime FiltringOfDate { get; set; }
     private string FiltringOfTags { get; set; }
     private string Searching { get; set; }
     private bool IsDisabled { get; set; } = true;
 
 
-    private void ToggleFilter() { 
+    private void ToggleFilter() {
+        FiltringOfDate = MinDateTime;
         IsDisabled = !IsDisabled;
         if (IsDisabled)
             ShowResults.InvokeAsync();
@@ -154,22 +157,19 @@ using System.Text.RegularExpressions;
                     TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
 
             });
-            if(FiltringOfDate is not null && FiltringOfDate != "")
+            if( DateTime.Compare(MinDateTime,FiltringOfDate) != 0)
                 filtringMethods.Add(() =>
                 {
-                    DateTime userDate = new DateTime();
-                    try {
-                        userDate = DateTime.Parse(FiltringOfDate);
-                    }catch(ArgumentException) {
-                        FiltringOfDate = "Fill in proprate formated date!";
-                        return;
-                    }
-                    catch(FormatException) {
-                        FiltringOfDate = "Fill in proprate formated date!";
-                        return;
-                    }
+                   
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 157 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\FiltringComponet.razor"
+                       
                     var query = from item in TodoItems
-                                where DateTime.Compare(item.Date,userDate) >= 0
+                                where DateTime.Compare(item.Date,FiltringOfDate) >= 0
                                 select item;
 
                     if(query is not null)
