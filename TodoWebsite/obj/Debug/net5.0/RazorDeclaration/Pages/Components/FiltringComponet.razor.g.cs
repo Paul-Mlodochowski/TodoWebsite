@@ -160,19 +160,11 @@ using System.Text.RegularExpressions;
             if( DateTime.Compare(MinDateTime,FiltringOfDate) != 0)
                 filtringMethods.Add(() =>
                 {
-                   
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 157 "C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\Pages\Components\FiltringComponet.razor"
-                       
                     var query = from item in TodoItems
                                 where DateTime.Compare(item.Date,FiltringOfDate) >= 0
                                 select item;
 
-                    if(query is not null)
+                    
                         TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
 
                 });

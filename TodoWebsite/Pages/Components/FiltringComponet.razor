@@ -148,7 +148,7 @@ else {
                                 where DateTime.Compare(item.Date,FiltringOfDate) >= 0
                                 select item;
 
-                    if(query is not null)
+                    
                         TodoItems = TodoItems.Where(t => query.Contains<TodoList>(t)).ToList<TodoList>();
 
                 });

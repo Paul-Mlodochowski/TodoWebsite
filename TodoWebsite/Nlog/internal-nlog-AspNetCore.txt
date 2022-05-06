@@ -38,3 +38,28 @@
 2022-05-06 11:03:54.2796 Info Adding target FileTarget(Name=allfile)
 2022-05-06 11:03:54.2796 Info Adding target FileTarget(Name=ownFile-web)
 2022-05-06 11:03:54.3347 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-06 11:05:58.8485 Info Message Template Auto Format enabled
+2022-05-06 11:05:58.8485 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-06 11:05:58.8805 Info Adding target FileTarget(Name=allfile)
+2022-05-06 11:05:58.8805 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-06 11:05:58.9137 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-06 11:09:01.7468 Info Message Template Auto Format enabled
+2022-05-06 11:09:01.7468 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-06 11:09:01.7963 Info Adding target FileTarget(Name=allfile)
+2022-05-06 11:09:01.7963 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-06 11:09:01.8349 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-06 11:12:22.6678 Info Message Template Auto Format enabled
+2022-05-06 11:12:22.7108 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-06 11:12:22.7837 Info Adding target FileTarget(Name=allfile)
+2022-05-06 11:12:22.7948 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-06 11:12:22.8826 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-06 11:13:13.7731 Info Message Template Auto Format enabled
+2022-05-06 11:13:13.7836 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-06 11:13:13.8281 Info Adding target FileTarget(Name=allfile)
+2022-05-06 11:13:13.8281 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-06 11:13:13.8724 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
+2022-05-06 11:13:37.1210 Info Message Template Auto Format enabled
+2022-05-06 11:13:37.1366 Info Loading assembly: NLog.Web.AspNetCore
+2022-05-06 11:13:37.1793 Info Adding target FileTarget(Name=allfile)
+2022-05-06 11:13:37.1879 Info Adding target FileTarget(Name=ownFile-web)
+2022-05-06 11:13:37.2160 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=63, FilePath=C:\Users\PAWEŁ\Desktop\Vis Studio\TodoWebsite\TodoWebsite\bin\Debug\net5.0\NLog.config
